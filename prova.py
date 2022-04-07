@@ -1,27 +1,29 @@
+from player import Player
+
 LOVE = 0
 FIFTEEN = 1
 THIRTY = 2
 FORTY = 3
 WIN = 4
 
-class Player:
-    def __init__(self, name, points):
-        self.name = name
-        self.points = points
-
-        def increase_points(self):
-            self.points += 1
-
-        def decrease_points(self):
-            self.points -= 1
-        
-        def get_player_points(self):
-            self.points
-
 class Game:
     def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
+
+    def set_p1_score(self, number):
+        for i in range(number):
+            self.P1Score()
+
+    def set_pw_score(self, number):
+        for i in range(number):
+            self.P2Score()
+
+    def p1_score(self):
+        self.player1.points += 1
+
+    def p2_score(self):
+        self.player2.points += 1
 
     def score(self):
         result = ""
@@ -112,20 +114,6 @@ class Game:
             result = "Win for " + self.player2.name
             
         return result
-
-    def set_p1_score(self, number):
-        for i in range(number):
-            self.P1Score()
-
-    def set_pw_score(self, number):
-        for i in range(number):
-            self.P2Score()
-
-    def p1_score(self):
-        self.player1.points += 1
-
-    def p2_score(self):
-        self.player2.points += 1
 
 
 ### Client
